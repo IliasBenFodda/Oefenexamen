@@ -1,6 +1,11 @@
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Zone is een class die gebruikt wordt om een Zone voor te stellen in het dierenpark
+ * @author Ilias Ben-Fodda
+ *
+ */
 public class Zone {
     private int maximumCapaciteit;
     private Set<Activiteit> activiteiten;
@@ -26,6 +31,10 @@ public class Zone {
         return leeftijdscategorien;
     }
 
+    /**
+     * Een methode om een activiteit toe te voegen aan een zone
+     * @param activiteit De activiteit die je wil toevoegen
+     */
     public void voegActiviteitToe(Activiteit activiteit) {
         activiteiten.add(activiteit);
     }
