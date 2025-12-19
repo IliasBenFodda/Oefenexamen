@@ -20,6 +20,7 @@ public class Main {
         while (status) {
             getWelkomMenu();
             int keuze = scanner.nextInt();
+            scanner.nextLine();
             switch (keuze) {
                 case 1 -> maakPersoneelslid();
                 case 2 -> maakActiviteit();
