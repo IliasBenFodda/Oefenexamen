@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -12,10 +13,10 @@ public class Activiteit {
     private String categorie;
     private String omschrijving;
 
-    public Activiteit(String naam, Set<Persooneelslid> personeelsleden, Set<Bezoeker> bezoekers, String categorie, String omschrijving) {
+    public Activiteit(String naam,String categorie, String omschrijving) {
         this.naam = naam;
-        this.personeelsleden = personeelsleden;
-        this.bezoekers = bezoekers;
+        this.personeelsleden = new HashSet<>();
+        this.bezoekers = new  HashSet<>();
         this.categorie = categorie;
         this.omschrijving = omschrijving;
     }

@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -9,14 +10,16 @@ import java.util.Set;
 public class Zone {
     private int maximumCapaciteit;
     private Set<Activiteit> activiteiten;
-    private List<Leeftijdscategorie> leeftijdscategorien;
+    private Set<Leeftijdscategorie> leeftijdscategorien;
+    private Set<Bezoeker> bezoekers;
     private String naam;
 
-    public Zone(int maximumCapaciteit, Set<Activiteit> activiteiten, List<Leeftijdscategorie> leeftijdscategorien, String naam) {
+    public Zone(int maximumCapaciteit, Set<Leeftijdscategorie> leeftijdscategorien, String naam) {
         this.maximumCapaciteit = maximumCapaciteit;
-        this.activiteiten = activiteiten;
+        this.activiteiten = new HashSet<>();
         this.leeftijdscategorien = leeftijdscategorien;
         this.naam = naam;
+        this.bezoekers = new HashSet<>();
     }
 
     public int getMaximumCapaciteit() {
@@ -27,8 +30,16 @@ public class Zone {
         return activiteiten;
     }
 
-    public List<Leeftijdscategorie> getLeeftijdscategorien() {
+    public Set<Leeftijdscategorie> getLeeftijdscategorien() {
         return leeftijdscategorien;
+    }
+
+    public String getNaam() {
+        return naam;
+    }
+
+    public Set<Bezoeker> getBezoekers() {
+        return bezoekers;
     }
 
     /**
@@ -39,5 +50,15 @@ public class Zone {
         activiteiten.add(activiteit);
     }
 
-
+    /**
+     * Een methode om een bezoeker toe te voegen aan een zone
+     * @param bezoeker De bezoeker die je wil toevoegen
+     */
+    public void voegBezoekerToe(Bezoeker bezoeker) {
+        if (bezoekers.size() < maximumCapaciteit) {
+            bezoekers.add(bezoeker);
+        }else  {
+            System.out.println("Te veel bezoekers");
+        }
+    }
 }
