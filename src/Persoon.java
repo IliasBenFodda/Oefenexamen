@@ -1,6 +1,11 @@
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
+/**
+ * Persoon is een class die gebruikt wordt om personen in het dierenpark voor te stellen
+ * Een superclass voor verschillende soorten personen in het park
+ * @author Ilias Ben-Fodda
+ *
+ */
 public abstract class Persoon {
     private String naam;
     private LocalDate geboorteDatum;
