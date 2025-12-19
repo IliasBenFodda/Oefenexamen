@@ -11,7 +11,7 @@ public class Zone {
         this.maximumCapaciteit = maximumCapaciteit;
         this.activiteiten = activiteiten;
         this.leeftijdscategorien = leeftijdscategorien;
-        this.naam = "";
+        this.naam = naam;
     }
 
     public int getMaximumCapaciteit() {
